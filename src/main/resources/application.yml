@@ -1,0 +1,32 @@
+server:
+  ssl:
+    enabled: true
+    key-store: classpath:pawga777.p12
+    key-store-password: ZSE4zse4
+    key-store-type: pkcs12
+    key-alias: pawga777
+    key-password: ZSE4zse4
+  port: 8443
+
+management:
+  info:
+    env:
+      enabled: true
+    java:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+      cors:
+        allowed-origins: "*"
+        allowed-methods: OPTIONS, GET, HEAD, POST, DELETE
+        allowed-headers: "*"
+
+info:
+  app:
+    build: "0.0.1-SNAPSHOT"
+    name: "Ssl demo"
+    version: CI_PIPELINE_IID
+    commit: CI_COMMIT_SHORT_SHA
+    branch: CI_COMMIT_BRANCH
